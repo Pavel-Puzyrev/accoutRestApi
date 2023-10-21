@@ -16,9 +16,10 @@ class Role(str, Enum):
 
 class User(BaseModel):
     id: UUID = Field(default_factory=uuid4)
-    login: str = Field(min_length=8, max_length=16)
-    email: EmailStr
-    first_name: str = Field(min_length=2, max_length=24, )
+    login: str = Field(min_length=4, max_length=16)
+    email: str = Field(min_length=8, max_length=16)
+    # email: EmailStr
+    first_name: str = Field(min_length=2, max_length=24)
     mid_name: str = Field(min_length=2, max_length=24)
     last_name: str = Field(min_length=2, max_length=24)
     phone: str = Field(min_length=3, max_length=12)
